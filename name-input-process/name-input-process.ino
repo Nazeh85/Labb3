@@ -47,3 +47,13 @@ while (digitalRead(btnDecBet) == LOW) {} // Vänta tills knappen släpps
 }
 }
 }
+
+void displayCurrentChar() {
+// Rensa skärmen, visa meddelande om att ange spelarens namn och aktuellt namn med aktuell bokstav på LCD-skärmen
+lcd.clear();
+lcd.setCursor(0, 0);
+lcd.print("ENTER YOUR NAME:");
+lcd.setCursor(0, 1);
+lcd.print(playerName);
+lcd.print(alphabet[currentCharIndex]);
+}
