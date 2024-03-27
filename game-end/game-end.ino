@@ -35,3 +35,23 @@ playerName = "";
 lcd.clear();
 getPlayerName();
 }
+
+void resetGame() {
+// Visa ett meddelande om att spelet återställs och att det kan spelas igen, vänta 2 sekunder
+lcd.setCursor(0, 0);
+lcd.print("GAME RESETS");
+lcd.setCursor(0, 1);
+lcd.print("PLAY AGAIN!");
+delay(2000);
+
+// Återställ alla spelvariabler till startvärden, rensa LCD-skärmen och visa spelstatus
+money = 100;
+wins = 0;
+losses = 0;
+bet = 10;
+headsOrTail = "";
+choice = '\0';
+gameOver = false;
+lcd.clear();
+displayStatus();
+}
