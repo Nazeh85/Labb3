@@ -18,3 +18,20 @@ delay(3000);
 // Återstarta spelet
 restartGame();
 }
+
+void restartGame() {
+// Återställ alla spelvariabler till startvärden
+money = 100;
+wins = 0;
+losses = 0;
+bet = 10;
+headsOrTail = "";
+choice = '\0';
+gameOver = false;
+nameEntered = false;
+playerName = "";
+
+// Rensa LCD-skärmen och börja om processen för att få spelarens namn
+lcd.clear();
+getPlayerName();
+}
