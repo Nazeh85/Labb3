@@ -33,4 +33,20 @@ digitalWrite(ledWin, LOW);
 displayMessage(" YOU WON ");
 displayMoney(bet);
 lcd.print(" $");
+}else {
+// Om spelaren förlorar: minska pengarna, öka antalet förluster, tänd lysdioden för förlust, visa "YOU LOST" och pengarna, vänta 2 sekunder
+money -= bet;
+losses++;
+digitalWrite(ledLoss, HIGH);
+delay(1000);
+digitalWrite(ledLoss, LOW);
+displayMessage(" YOU LOST ");
+displayMoney(bet);
+lcd.print(" $");
+}
+delay(2000);
+
+// Återställ insatsen till standardvärdet
+bet = 10;
+displayBet(bet);
 }
