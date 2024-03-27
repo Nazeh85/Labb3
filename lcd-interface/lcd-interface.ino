@@ -14,3 +14,22 @@ const int btnStartGame = 6; // OBS: Samma stift för btnReset och btnStartGame
 
 const int ledWin = 4;
 const int ledLoss = 5;
+
+// Variabler för spelstatus och pengar
+int money = 100;
+int wins = 0;
+int losses = 0;
+int bet = 10;
+String headsOrTail = "";
+char choice = '\0';
+
+// Booleans för knapptryckning och spelstatus
+bool decreaseBtnPressed = false;
+bool gameOver = false;
+bool nameEntered = false;
+String playerName = "";
+
+// En array som innehåller bokstäver och siffror för att användas vid inmatning av spelarens namn
+char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+int currentCharIndex = 0;
