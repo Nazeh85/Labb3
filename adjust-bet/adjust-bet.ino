@@ -9,4 +9,14 @@ void adjustBet(int *currentBet, int currentMoney, bool increase) {
       lcd.print("Maximum reached");
       delay(2000);
     }
-  }
+  } else {
+    if (*currentBet - 10 >= 10) {
+      *currentBet -= 10;
+    } else {
+      // Visa felmeddelande om försök att minska insatsen när den redan är på det lägsta värdet
+lcd.clear();
+lcd.print("Minimum reached");
+delay(2000);
+}
+}
+}
